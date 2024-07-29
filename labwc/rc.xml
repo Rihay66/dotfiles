@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+<labwc_config>
+  <core>
+    <!-- 
+      To configure adaptive sync
+    -->
+    <adaptiveSync>yes</adaptiveSync>
+  </core>
+  <theme>
+    <name>catppuccin-macchiato</name>
+    <cornerRadius>0</cornerRadius>
+    <font name="sans" size="10"/>
+    <dropShadows>yes</dropShadows>
+  </theme>
+  <keyboard>
+    <!-- Use a different terminal emulator -->
+    <keybind key="W-t">
+      <action name="Execute" command="kitty"/>
+    </keybind>
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-z">
+      <action name="Execute" command="wofi --show drun"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-w">
+      <action name="ToggleAlwaysOnTop"/>
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="A-XF86LaunchB">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleMaximize" direction="both"/>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="amixer set Master 5%+"/>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="amixer set Master 5%-"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="SnapToEdge" direction="up" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down" />
+    </keybind>
+    <keybind key="W-a">
+      <action name="ToggleMaximize" />
+    </keybind>
+  </keyboard>
+  <mouse>
+  <default />
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="some-custom-menu" />
+      </mousebind>
+    </context>
+  </mouse>
+  <placement>
+    <policy>cascade</policy>
+  </placement>
+  <libinput>
+    <device>
+      <naturalScroll/>
+    </device>
+  </libinput>
+</labwc_config>
