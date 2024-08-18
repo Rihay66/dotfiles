@@ -23,12 +23,15 @@ exec swaync
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
+# Toggle power menu
+bindsym $mod+Shift+p exec python ~/.config/wofi/wofipowermenu.py
+
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
+set $menu dmenu_path | wofi --show | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -164,9 +167,10 @@ output DP-2 mode 1366x768 pos 1680 0 transform 270
 #
 # Custom Input
 #
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-
+	# Raise the volume
+	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+	# Lower the volume
+	bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 #
 # Resizing containers:
 #
