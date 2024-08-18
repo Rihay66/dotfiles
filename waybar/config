@@ -15,7 +15,7 @@
         "tray",
         "network",
         "pulseaudio",
-        "custom/power"
+        "battery"
     ],
     "wlr/taskbar": {
         "format": "{icon}",

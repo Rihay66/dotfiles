@@ -20,7 +20,7 @@ def run_menu():
   )
 
   options = "\n".join(keys)
-  choice = os.popen("echo -e '" + options + "' | wofi -d -i -p 'Power Menu' -W 300 -H 225 -k /dev/null").readline().strip()
+  choice = os.popen("echo -e '" + options + "' | wofi -d -i -p 'Power Menu' -W 300 -H 235 -k /dev/null").readline().strip()
   if choice in keys:
     os.popen(actions[keys.index(choice)])
 

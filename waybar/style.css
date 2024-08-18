@@ -47,6 +47,7 @@ window#waybar.hidden {
 #pulseaudio,
 #network,
 #clock,
+#battery,
 #tray {
   border-radius: 4px;
   margin: 6px 3px;
@@ -93,6 +94,26 @@ window#waybar.hidden {
   color: #8e2dfe;
 }
 
+#battery {
+  background-color: #181825;
+  color: #8e2dfe;
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #181825;
+  color: #FFFF00;
+}
+
+#battery.charging {
+  background-color: #a6e3a1;
+  color: #181825;
+}
+
+#backlight {
+  background-color: #181825;
+}
 
 tooltip {
   border-radius: 8px;

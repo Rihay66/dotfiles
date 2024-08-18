@@ -36,6 +36,7 @@ set $menu dmenu_path | wofi --show | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output eDP-1 bg /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg fill
 output DP-1 bg /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg fill 
 output DP-2 bg /home/rihay/Pictures/20190813_170146.jpg fill
 #
@@ -73,6 +74,11 @@ exec swayidle -w \
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+
+input 1102:4618:DELL0823:00_044E:120A_Touchpad {
+	tap enabled
+	natural_scroll enabled
+}
 
 ### Key bindings
 #
@@ -225,5 +231,10 @@ client.urgent           $purple $purple $purple $purple $purple
 #
 for_window [app_id="com.vixalien.sticky"] floating enable
 for_window [app_id="blueman-manager"] floating enable
+
+#
+# Set Cursor theme
+#
+seat seat0 xcursor_theme Bibata-Modern-Classic 24
 
 include /etc/sway/config.d/*
