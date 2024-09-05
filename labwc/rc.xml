@@ -16,6 +16,7 @@
     <font name="sans" size="10"/>
     <dropShadows>yes</dropShadows>
   </theme>
+  <desktops number="10" />
   <keyboard>
     <!-- Use a different terminal emulator -->
     <keybind key="W-t">
@@ -28,13 +29,16 @@
     <keybind key="W-z">
       <action name="Execute" command="wofi --show drun"/>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-S-c">
       <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-S-p">
+      <action name="Execute" command="python ~/.config/wofi/labwcwofipowermenu.py"/>
     </keybind>
     <keybind key="W-w">
       <action name="ToggleAlwaysOnTop"/>
     </keybind>
-    <keybind key="A-F4">
+    <keybind key="W-S-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-XF86LaunchB">
@@ -46,7 +50,7 @@
     <keybind key="W-Tab">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="W-m">
+    <keybind key="W-f">
       <action name="ToggleMaximize" direction="both"/>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">

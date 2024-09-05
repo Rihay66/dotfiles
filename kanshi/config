@@ -21,6 +21,5 @@ profile double {
 	output DP-2 {
 		enable 
 		position 1680,0 
-		transform 90
 	}
 }

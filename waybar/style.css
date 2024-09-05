@@ -65,7 +65,7 @@ window#waybar.hidden {
 #custom-logo {
   margin: 6px 3px;
   font-size: 20px;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 4px 4px 4px;
   background-color: #181825;
   color: #ffffff;
 }

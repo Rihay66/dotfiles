@@ -13,8 +13,8 @@ kanshi >/dev/null 2>&1 &
 # swaybg -c '#113344' >/dev/null 2>&1 &
 
 # Set background wallpaper
-swaybg -o DP-1 -i /home/rihay/Pictures/gt-exellero-180228-transformed.jpeg -m fill >/dev/null 2>&1 &
-swaybg -o DP-2 -i /home/rihay/Pictures/snapedit_1716314104493.png -m fill >/dev/null 2>&1 &
+swaybg -o DP-1 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg -m fill >/dev/null 2>&1 &
+swaybg -o DP-2 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg >/dev/null 2>&1 &
 swaybg -o HDMI-A-1 -i /home/rihay/Pictures/exellero-005-17-2-copy.jpg -m fill >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
@@ -32,8 +32,7 @@ mako >/dev/null 2>&1 &
 # `wlr-randr --output <whatever> --off` because this re-arranges views
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 600 'wlopm --off \*' \
-	resume 'wlopm --on \*' \
-	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+#swayidle -w \
+    #timeout 300 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg' \
+    #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    #before-sleep 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg' >/dev/null 2>&1 &
