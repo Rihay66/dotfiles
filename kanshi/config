@@ -1,25 +1,20 @@
-profile main {
-	output DP-1 {
-		enable
-		position 0,0
-	}
-}
-
-profile livingroom {
+profile bigscreen {
 	output HDMI-A-1 {
 		enable
 		mode 1920x1080@60Hz
-		position 0,0	
+		position 0,0
 	}
 }
 
-profile double {
-	output DP-1 {
-		enable 
-		position 0,0
+profile default {
+	output HDMI-A-1 {
+		enable
+		mode 1920x1080@100Hz 
+		position 0,0 
 	}
-	output DP-2 {
+
+	output DP-3 { 
 		enable 
-		position 1680,0 
-	}
+		position 1920,0
+	} 
 }

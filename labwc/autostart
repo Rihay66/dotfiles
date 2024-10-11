@@ -1,5 +1,3 @@
-# Example autostart file
-
 # Configure output directives such as mode, position, scale and transform.
 # Use wlr-randr to get your output names
 # Example ~/.config/kanshi/config below:
@@ -13,9 +11,10 @@ kanshi >/dev/null 2>&1 &
 # swaybg -c '#113344' >/dev/null 2>&1 &
 
 # Set background wallpaper
-swaybg -o DP-1 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg -m fill >/dev/null 2>&1 &
-swaybg -o DP-2 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg >/dev/null 2>&1 &
-swaybg -o HDMI-A-1 -i /home/rihay/Pictures/exellero-005-17-2-copy.jpg -m fill >/dev/null 2>&1 &
+#swaybg -o DP-1 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg -m fill >/dev/null 2>&1 &
+#swaybg -o DP-3 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg -m fill >/dev/null 2>&1 &
+swaybg -o HDMI-A-1 -i /home/rihay/Pictures/LSTR.png -m fit >/dev/null 2>&1 &
+mpvpaper -s -o "--loop-file=inf" DP-3 /home/rihay/Videos/signalis.mp4 >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
 waybar >/dev/null 2>&1 &

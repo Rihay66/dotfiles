@@ -8,7 +8,7 @@ def run_menu():
     "\uf186   Suspend",
     "\uf2dc   Hibernate",
     "\uf021   Reboot",
-    "\uf011   Shutdown",
+    "󰤆   Shutdown",
   )
 
   actions = (
