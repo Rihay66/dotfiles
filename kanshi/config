@@ -18,3 +18,10 @@ profile default {
 		position 1920,0
 	} 
 }
+
+profile emain {
+	output eDP-1 {
+		enable
+		position 0,0
+	}
+}
