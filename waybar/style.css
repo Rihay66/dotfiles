@@ -17,7 +17,7 @@ window#waybar.hidden {
 
 #workspaces button {
   border: none;
-  color: #7626d2;
+  color: #ffffff;
   font-weight: bolder;
   padding: 3px;
   background: transparent;
@@ -25,7 +25,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  color: #aa00ff;
+  color: #333333;
   animation: button_activate .2s ease-in-out;
 }
 
@@ -49,9 +49,9 @@ window#waybar.hidden {
 #clock,
 #battery,
 #tray {
-  border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
+  border-radius: 7px;
+  margin: 0px 3px;
+  padding: 1px 12px;
   background-color: #181825;
   color: #181825;
 }
@@ -63,9 +63,10 @@ window#waybar.hidden {
 }
 
 #custom-logo {
-  margin: 6px 3px;
+  margin: 0px 3px;
   font-size: 20px;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 7px;
+  padding-right: 6px; 
   background-color: #181825;
   color: #ffffff;
 }
@@ -79,24 +80,24 @@ window#waybar.hidden {
 
 #pulseaudio {
   background-color: #181825;
-  color: #8e2dfe;
+  color: #5BCEFA;
 }
 
 #network {
   background-color: #181825;
   padding-right: 17px;
-  color: #8e2dfe;
+  color: #5BCEFA;
 }
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
   background-color: #181825;
-  color: #8e2dfe;
+  color: #F5A9B8;
 }
 
 #battery {
   background-color: #181825;
-  color: #8e2dfe;
+  color: #5BCEFA;
 }
 
 #battery.warning,
@@ -118,10 +119,10 @@ window#waybar.hidden {
 tooltip {
   border-radius: 8px;
   padding: 15px;
-  background-color: #2b1b37;
+  background-color: #181825;
 }
 
 tooltip label {
   padding: 5px;
-  background-color: #2b1b37;
+  background-color: #181825;
 }

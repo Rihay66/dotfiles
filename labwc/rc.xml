@@ -18,19 +18,17 @@
   </theme>
   <desktops number="10" />
   <keyboard>
-    <!-- Use a different terminal emulator -->
     <keybind key="W-t">
       <action name="Execute" command="kitty"/>
     </keybind>
-    <!--
-      Remove a previously defined keybind
-      A shorter alternative is <keybind key="W-F4" />
-    -->
     <keybind key="W-z">
       <action name="Execute" command="wofi --show drun"/>
     </keybind>
+    <keybind key="W-b">
+      <action name="Execute" command="blueman-manager"/>
+    </keybind>
     <keybind key="W-i">
-      <action name="Execute" command="thunar"/>
+      <action name="Execute" command="nautilus"/>
     </keybind>
     <keybind key="W-m">
       <action name="Iconify"/>
@@ -60,10 +58,10 @@
       <action name="ToggleMaximize" direction="both"/>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute" command="amixer set Master 5%+"/>
+      <action name="Execute" command="amixer set Master 2%+"/>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute" command="amixer set Master 5%-"/>
+      <action name="Execute" command="amixer set Master 2%-"/>
     </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" />
@@ -76,9 +74,6 @@
     </keybind>
     <keybind key="W-Down">
       <action name="SnapToEdge" direction="down" />
-    </keybind>
-    <keybind key="W-a">
-      <action name="ToggleMaximize" />
     </keybind>
   </keyboard>
   <mouse>
