@@ -63,6 +63,12 @@
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute" command="amixer set Master 2%-"/>
     </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +5%"/>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 5%-"/>
+    </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" />
     </keybind>
@@ -89,7 +95,7 @@
   </placement>
   <libinput>
     <device>
-      <naturalScroll/>
+      <naturalScroll>yes</naturalScroll>
     </device>
   </libinput>
 </labwc_config>
