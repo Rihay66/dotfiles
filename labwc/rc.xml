@@ -5,7 +5,7 @@
 -->
 <labwc_config>
   <core>
-    <!-- 
+    <!--
       To configure adaptive sync
     -->
     <adaptiveSync>yes</adaptiveSync>
@@ -81,6 +81,9 @@
     <keybind key="W-Down">
       <action name="SnapToEdge" direction="down" />
     </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute" command="gscreenshot -s -f Pictures/Screenshots -n"/>
+    </keybind>
   </keyboard>
   <mouse>
   <default />
@@ -95,7 +98,7 @@
   </placement>
   <libinput>
     <device>
-      <naturalScroll>yes</naturalScroll>
+      <naturalScroll>no</naturalScroll>
     </device>
   </libinput>
 </labwc_config>
