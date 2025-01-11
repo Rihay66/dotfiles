@@ -63,6 +63,9 @@
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute" command="amixer set Master 2%-"/>
     </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="amixer set Master 0%"/>
+    </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute" command="brightnessctl set +5%"/>
     </keybind>
@@ -98,7 +101,7 @@
   </placement>
   <libinput>
     <device>
-      <naturalScroll>no</naturalScroll>
+      <naturalScroll>yes</naturalScroll>
     </device>
   </libinput>
 </labwc_config>
