@@ -59,8 +59,18 @@
 	flatpak
 	gnome-software
      	heroic
+	spotify
+	vesktop
+	obsidian
 	];
   };
+
+  # Get fonts to be part of base system
+  fonts.packages = with pkgs; [ 
+	nerdfonts
+	fira-code
+	noto-fonts-emoji 
+  ];
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -70,10 +80,13 @@
   nixpkgs.config.allowUnfreePredicate = pkg: true;  
 
   # set up xorg
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Make flatpak repo available
   services.flatpak.enable = true;
+  # set up xdg for flatpaks
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
@@ -86,6 +99,7 @@
   boot.kernelPackages = pkgs.linuxPackages_6_12;
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
+
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   
   # enable OpenGL 
@@ -104,6 +118,9 @@
 	# Set nvidia power management
 	powerManagement.enable = true;
 
+	# turn off when not in use
+	powerManagement.finegrained = false;
+
 	# Use proprietary kernel module
 	open = false;
 
@@ -114,17 +131,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    fuse
+    fuse3
     vim 
     git
     kitty
     python39
-    mako 
     wl-clipboard
     neovim
     kanshi
     wofi
     waybar
     wlr-randr
+    blueman
+    pavucontrol
+    alsa-utils
+    zed-editor
   ];
 
   # Set up firefox
@@ -176,6 +198,15 @@
       ExecStart = ''${pkgs.kanshi}/bin/kanshi -c kanshi_config_file'';
     };
   };
+
+  # enable bluetooth media control
+  systemd.user.services.mpris-proxy = {
+    description = "Mpris proxy";
+    after = [ "network.target" "sound.target" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
