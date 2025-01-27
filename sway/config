@@ -23,6 +23,9 @@ exec swaync
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
+# Open bluetooth
+bindsym $mod+b exec blueman-manager
+
 # Toggle power menu
 bindsym $mod+Shift+p exec python ~/.config/wofi/wofipowermenu.py
 
@@ -37,25 +40,28 @@ set $menu dmenu_path | wofi --show | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output eDP-1 bg /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg fill
-output DP-1 bg /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg fill 
+output DP-1 bg /home/rihay/Pictures/f3lc4t-240912.jpg fill 
 output DP-2 bg /home/rihay/Pictures/20190813_170146.jpg fill
+output DP-3 bg /home/rihay/Pictures/f3lc4t-240912.jpg fill
+output HDMI-A-1 bg /home/rihay/Pictures/3Sisters.png fill
+
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output DP-1 mode 1680x1050 pos 0 0
-output DP-2 mode 1366x768 pos 1680 0 transform 270
+output DP-1 resolution 1680x1050 position 0,0 transform 90
+output HDMI-A-1 resolution 1920x1080@100Hz position 1050,263 adaptive_sync on
 
 ### Idle configuration
 #
 # Example configuration:
 #
-exec swayidle -w \
-          timeout 300 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg' \
-          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg'
+#exec swayidle -w \
+#          timeout 600 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg' \
+#          timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -i ~/.config/sway/asnk06xoqzi61.jpg'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -174,9 +180,11 @@ input 1102:4618:DELL0823:00_044E:120A_Touchpad {
 # Custom Input
 #
 	# Raise the volume
-	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+	bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
 	# Lower the volume
-	bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+	bindsym XF86AudioLowerVolume exec amixer set Master 2%-
+	# Mute volume
+	bindsym XF86AudioMute exec amixer set Master 1+ toggle
 #
 # Resizing containers:
 #
