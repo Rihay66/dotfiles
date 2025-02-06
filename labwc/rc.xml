@@ -64,7 +64,7 @@
       <action name="Execute" command="amixer set Master 2%-"/>
     </keybind>
     <keybind key="XF86AudioMute">
-      <action name="Execute" command="amixer set Master 0%"/>
+      <action name="Execute" command="amixer set Master 1+ toggle"/>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute" command="brightnessctl set +5%"/>
@@ -101,7 +101,7 @@
   </placement>
   <libinput>
     <device>
-      <naturalScroll>yes</naturalScroll>
+      <naturalScroll>no</naturalScroll>
     </device>
   </libinput>
 </labwc_config>
