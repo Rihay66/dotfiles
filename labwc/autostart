@@ -7,6 +7,9 @@
 #   }
 kanshi >/dev/null 2>&1 &
 
+# start volume change notification daemon
+volnoti >/dev/null 2>&1 &
+
 # Set background color.
 
 # Set background wallpaper
