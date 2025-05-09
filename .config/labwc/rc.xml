@@ -11,10 +11,13 @@
     <adaptiveSync>yes</adaptiveSync>
   </core>
   <theme>
-    <name>catppuccin-macchiato</name>
+    <name>catppuccin-mocha</name>
     <cornerRadius>0</cornerRadius>
     <font name="sans" size="10"/>
     <dropShadows>yes</dropShadows>
+    <titlebar>
+      <showTitle>no</showTitle>
+    </titlebar>
   </theme>
   <desktops number="10" />
   <keyboard>
@@ -27,20 +30,23 @@
     <keybind key="W-b">
       <action name="Execute" command="blueman-manager"/>
     </keybind>
-    <keybind key="W-i">
-      <action name="Execute" command="nautilus"/>
-    </keybind>
     <keybind key="W-m">
       <action name="Iconify"/>
     </keybind>
+    
     <keybind key="W-S-c">
       <action name="Reconfigure"/>
     </keybind>
+    
     <keybind key="W-S-p">
       <action name="Execute" command="python ~/.config/wofi/labwcwofipowermenu.py"/>
     </keybind>
+    
     <keybind key="W-w">
       <action name="ToggleAlwaysOnTop"/>
+    </keybind>
+    <keybind key="W-S-w">
+      <action name="ToggleOmnipresent"/>
     </keybind>
     
     <keybind key="W-S-q">
@@ -66,15 +72,12 @@
 
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute" command="amixer set Master 2%+"/>
-      <action name="Execute" command="volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | tail -1)"/>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute" command="amixer set Master 2%-"/>
-      <action name="Execute" command="volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | tail -1)"/>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute" command="amixer set Master 1+ toggle"/>
-      <action name="Execute" command="if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | tail -1); fi"/>
     </keybind>
 
     <keybind key="XF86MonBrightnessUp">
@@ -89,24 +92,6 @@
     </keybind>
     <keybind key="W-S-Right">
       <action name="SnapToEdge" direction="right" />
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="SnapToEdge" direction="up" />
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="SnapToEdge" direction="down" />
-    </keybind>
-    <keybind key="W-Left">
-      <action name="FocusOutput" direction="left"/>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="FocusOutput" direction="right"/>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="FocusOutput" direction="up"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="FocusOutput" direction="down"/>
     </keybind>
     <keybind key="W-S-s">
       <action name="Execute" command="gscreenshot -s -f Pictures/Screenshots -n"/>
@@ -190,4 +175,11 @@
       <naturalScroll>no</naturalScroll>
     </device>
   </libinput>
+  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
+  <fields>
+    <field content="icon" width="25%" />
+    <field content="desktop_entry_name" width="25%" />
+    <field content="title" width="50%" />
+  </fields>
+</windowSwitcher>
 </labwc_config>

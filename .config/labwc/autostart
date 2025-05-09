@@ -13,8 +13,9 @@ volnoti >/dev/null 2>&1 &
 # Set background color.
 
 # Set background wallpaper
-swaybg -o DP-1 -i /home/rihay/Pictures/f3lc4t-240912.jpg -m fill >/dev/null 2>&1 &
-swaybg -o HDMI-A-1 -i /home/rihay/Pictures/3Sisters.png -m fill >/dev/null 2>&1 &
+swaybg -o HDMI-A-1 -i /home/rihay/Pictures/20190813_170146.jpg -m fill >/dev/null 2>&1 &
+swaybg -o DP-2 -i /home/rihay/Pictures/alena-aenami-eternity-1080px.jpg -m fill >/dev/null 2>&1 &
+swaybg -o DP-3 -i /home/rihay/Pictures/smite.jpg -m fill >/dev/null 2>&1 &
 swaybg -o eDP-1 -i /home/rihay/Pictures/3Sisters.png -m fill >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
