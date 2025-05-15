@@ -1,0 +1,178 @@
+{
+  "layer": "top",
+  "position": "left",
+  "reload_style_on_change": true,
+  "modules-right": [
+    "tray",
+    "group/connection",
+    "group/together",
+    "group/sound"
+  ],
+  "group/sound": {
+    "orientation": "inherit",
+    "modules": [
+      "group/audio"
+    ]
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio#mic",
+      "pulseaudio/slider"
+    ]
+  },
+  "group/connection": {
+    "orientation": "inherit",
+    "modules": [
+      "group/network",
+      "group/bluetooth"
+    ]
+  },
+  "group/together": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/weather",
+      "clock"
+    ]
+  },
+  "group/network": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "network",
+      "network#speed"
+    ]
+  },
+  "group/bluetooth": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "bluetooth",
+      "bluetooth#status"
+    ]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "tooltip-format": "{volume}% {icon} | {desc}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphones": "󰋌",
+      "handsfree": "󰋌",
+      "headset": "󰋌",
+      "phone": "",
+      "portable": "",
+      "car": " ",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "amixer set Master 1+ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "amixer set Master 2%+",
+    "on-scroll-down": "amixer set Master 2%-",
+    "smooth-scrolling-threshold": 1
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "on-click": "amixer set Capture 1+ toggle",
+    "on-scroll-up": "amixer set Capture 1%+",
+    "on-scroll-down": "amixer set Capture 1%-"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "network": {
+    "format": "{icon}",
+    "format-icons": {
+      "wifi": [
+        "󰤨"
+      ],
+      "ethernet": [
+        "󰈀"
+      ],
+      "disconnected": [
+        "󰖪"
+      ]
+    },
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "format-linked": "󰈁",
+    "tooltip": false
+  },
+  "network#speed": {
+    "format": " {bandwidthDownBits} ",
+    "rotate": 90,
+    "interval": 5,
+    "tooltip-format": "{ipaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)   \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-ethernet": "{ifname} 󰈀 \n{ipaddr} | {frequency} MHz{icon} ",
+    "tooltip-format-disconnected": "Not Connected to any type of Network",
+    "tooltip": true
+  },
+  "bluetooth": {
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "<b></b>",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
+  "bluetooth#status": {
+    "format-on": "",
+    "format-off": "",
+    "format-disabled": "",
+    "format-connected": "<b>{num_connections}</b>",
+    "format-connected-battery": "<small><b>{device_battery_percentage}%</b></small>",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
+  "clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --mph --fahrenheit --custom-indicator '{ICON}\n<b>{temp_F}</b>' --location florida",
+    "return-type": "json"
+  }
+}
