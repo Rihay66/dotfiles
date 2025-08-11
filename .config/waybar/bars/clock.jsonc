@@ -1,0 +1,17 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-center": [
+        "group/together"
+    ],
+    "group/together": {
+        "orientation": "inherit",
+        "modules": [
+            "clock"
+        ]
+    },
+    "clock": {
+        "format": "{:%H:%M}"
+    }
+}

@@ -81,6 +81,9 @@ WLR_NO_HARDWARE_CURSORS=1
 
 # LABWC_FALLBACK_OUTPUT=NOOP-fallback
 
-XCURSOR_THEME=Bibata-Modern-Classic
+XCURSOR_THEME=Gold-Ship-Cursor
 XCURSOR_SIZE=24
 XKB_DEFAULT_LAYOUT=us
+
+# set electron applications to use wayland by default
+ELECTRON_OZONE_PLATFORM_HINT=auto

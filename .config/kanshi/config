@@ -1,7 +1,7 @@
 profile bigscreen {
 	output HDMI-A-1 {
 		enable
-		mode 1920x1080@100Hz
+		mode 1920x1080@60Hz
 		position 0,0
 	}
 }
@@ -10,12 +10,14 @@ profile default {
 	output HDMI-A-1 {
 		enable
 		mode 1920x1080@100Hz 
-		position 0,0 
+		position 2560,0
+		transform 90 
 	}
 
 	output DP-2 { 
 		enable 
-		position 1920,0
+		mode 2560x1440@164.80Hz
+		position 0,0		
 	} 
 }
 
@@ -38,11 +40,12 @@ profile flipped {
 	output HDMI-A-1 {
 		enable
 		mode 1920x1080@100Hz
-		position 1680,0
+		position 1050,320
 	}
 	output DP-1 {
 		enable
 		position 0,0
+		transform 270
 	}
 }
 

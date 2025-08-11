@@ -1,8 +1,18 @@
-{
+[{
     "output": [
         "DP-2"
     ],
     "include": [
-        "~/.config/waybar/bars/top.jsonc"
-    ]
-}
+        "~/.config/waybar/bars/main.jsonc"
+    ],
+    "name": "main"
+},
+{
+    "output":[
+        "HDMI-A-1"
+    ],
+    "include":[
+        "~/.config/waybar/bars/clock.jsonc"
+    ],
+    "name": "clock"
+}]

@@ -1,5 +1,5 @@
 * {
-  font-size: 16px;
+  font-size: 19px;
   font-family: "JetBrainsMono Nerd Font, JetBrainsMono NF";
   min-width: 8px;
   min-height: 0px;
@@ -9,11 +9,18 @@
   text-shadow: none;
 }
 
+window.DP-2#waybar {
+  border-radius: 0px 14px 14px 0px;
+}
+
+window.HDMI-A-1#waybar {
+  border-radius: 0px 0px 14px 14px;
+}
+
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-radius: 8px;
-  border: 1px solid rgb(178, 84, 255);
+  border: 1px solid rgba(20, 20, 20, 0.739);
   background: #181825;
   background: alpha(#181825, 0.7);
   color: lighter(#f38ba8);
@@ -45,18 +52,14 @@ tooltip label {
 }
 
 .modules-right {
-  margin: 0px 6px 6px 6px;
   border-radius: 4px;
-  background: alpha(#181825, 0.4);
   color: #f38ba8;
 }
 
 .modules-left {
   transition-property: background-color;
   transition-duration: 0.5s;
-  margin: 6px 6px 6px 6px;
   border-radius: 4px;
-  background: alpha(#181825, 0.4);
   color: #f38ba8;
 }
 
@@ -72,7 +75,6 @@ tooltip label {
 #sound {
   border-radius: 4px;
   margin: 2px 2px 4px 2px;
-  background: alpha(darker(#181825), 0.3);
 }
 
 #submap {
@@ -107,7 +109,6 @@ tooltip label {
 }
 
 #network.wifi {
-  font-size: 20px;
   padding-right: 4px;
 }
 
@@ -122,7 +123,6 @@ tooltip label {
 }
 
 #bluetooth {
-  font-size: 20px;
   padding-top: 2px;
 }
 
@@ -150,13 +150,11 @@ tooltip label {
 
 #clock {
   font-weight: bold;
-  font-size: 25px;
   padding: 4px 19px 2px 19px;
 }
 
 #pulseaudio {
-  font-size: 26px;
-  padding-right: 5px;
+  font-size: 20px;
 }
 
 #pulseaudio.mic {
